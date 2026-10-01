@@ -1,0 +1,5 @@
+.filters { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-2) var(--space-3); margin-top: var(--space-4); }
+.divider { width: 1px; height: 24px; background: var(--hairline-strong); }
+.count { margin: var(--space-4) 0 var(--space-5); color: var(--text-4); }
+.board { min-height: 420px; }
+.footnote { max-width: 72ch; margin-top: var(--space-5); color: var(--text-3); }

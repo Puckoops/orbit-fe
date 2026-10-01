@@ -1,0 +1,4 @@
+.line { display: flex; flex-direction: column; gap: 10px; padding-bottom: 16px; border-bottom: var(--border-w) solid var(--hairline); }
+.line:last-child { border-bottom: 0; }
+.lineHead { display: flex; align-items: baseline; gap: 10px; }
+.lineHead p { flex: 1; color: var(--text-1); }

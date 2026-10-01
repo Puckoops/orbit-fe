@@ -1,0 +1,12 @@
+.fileName { display: inline-flex; align-items: center; gap: 10px; min-width: 0; max-width: 100%; }
+.fileIcon { flex: none; color: var(--text-4); }
+.ellipsis { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rowLink { color: inherit; }
+.rowLink:hover { text-decoration: underline; text-decoration-color: var(--hairline-strong); text-underline-offset: 3px; }
+.toolbar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4); }
+.toolbarSearch { flex: 1; min-width: 220px; }
+.spacer { flex: 1; }
+.clear { padding: 0 8px; border: 0; background: transparent; color: var(--text-3); font-size: 13px; cursor: pointer; }
+.clear:hover { color: var(--text-1); }
+.clear:disabled { color: var(--text-4); cursor: default; }
+.muted { color: var(--text-4); }

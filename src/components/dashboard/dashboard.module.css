@@ -1,0 +1,22 @@
+.stack { display: flex; flex-direction: column; gap: var(--grid-gutter); height: 100%; }
+.stack > :last-child { flex: 1; }
+.clientCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  height: 100%;
+  padding: var(--space-5) var(--space-6);
+  border: var(--border-w) solid var(--hairline);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  box-shadow: var(--shadow-card);
+  color: var(--text-1);
+  transition: box-shadow var(--dur-2) var(--ease-in-out), border-color var(--dur-2) var(--ease-in-out);
+}
+.clientCard:hover { box-shadow: var(--shadow-raised); border-color: var(--hairline-strong); }
+.clientHead { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); }
+.clientHead h3 { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.clientStats { display: flex; flex-wrap: wrap; gap: var(--space-3) var(--space-6); }
+.clientStats > div { display: flex; flex-direction: column-reverse; gap: 2px; }
+.clientStats dd { margin: 0; font-size: 22px; line-height: 26px; }
+.clientStats dt { color: var(--text-4); }

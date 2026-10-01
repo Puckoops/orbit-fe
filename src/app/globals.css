@@ -1,0 +1,5 @@
+:root {
+  --font-sans: var(--pk-sans), system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: var(--pk-serif), "Iowan Old Style", Georgia, serif;
+  --font-mono: var(--pk-mono), ui-monospace, SFMono-Regular, Menlo, monospace;
+}

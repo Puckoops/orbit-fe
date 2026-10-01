@@ -1,0 +1,8 @@
+.search { width: min(480px, 100%); }
+.name { display: inline-flex; align-items: center; gap: var(--space-3); color: var(--text-1); }
+.back { margin-top: var(--space-6); }
+.folderGrid { align-items: start; }
+.files { display: flex; flex-direction: column; }
+.files li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-3); padding: 9px 0; border-bottom: var(--border-w) solid var(--hairline); font-size: 13px; color: var(--text-2); }
+.files li span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.side { display: flex; flex-direction: column; gap: var(--grid-gutter); }

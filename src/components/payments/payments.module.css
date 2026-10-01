@@ -1,0 +1,8 @@
+.gateway { align-items: center; gap: var(--space-3); max-width: 680px; margin: 0 auto; padding: var(--space-12) var(--space-8); text-align: center; }
+.gateway p { max-width: 46ch; }
+.gatewayActions { display: flex; gap: var(--space-3); margin-top: var(--space-3); }
+.lines { display: flex; flex-direction: column; }
+.lines li { display: flex; justify-content: space-between; gap: var(--space-4); padding: 9px 0; border-bottom: var(--border-w) solid var(--hairline); font-size: 13px; }
+.totals { display: flex; flex-direction: column; gap: 6px; margin-top: var(--space-3); }
+.totals div { display: flex; justify-content: space-between; font-size: 13px; color: var(--text-2); }
+.totals div:last-child { color: var(--text-1); font-weight: 500; }
