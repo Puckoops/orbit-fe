@@ -2,13 +2,13 @@ import "@puckoops/camelot/styles.css";
 import "./globals.css";
 import { themeScript } from "@puckoops/camelot/helpers";
 import type { Metadata } from "next";
-import { Instrument_Sans, Instrument_Serif, JetBrains_Mono } from "next/font/google";
+import { Instrument_Sans, Instrument_Serif, Geist_Mono } from "next/font/google";
 import { InlineScript } from "@/components/InlineScript";
 import { Providers } from "./providers";
 
 const sans = Instrument_Sans({ subsets: ["latin"], weight: ["400", "500", "600"], variable: "--pk-sans", display: "swap" });
 const serif = Instrument_Serif({ subsets: ["latin"], weight: "400", style: ["normal", "italic"], variable: "--pk-serif", display: "swap" });
-const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--pk-mono", display: "swap" });
+const mono = Geist_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--pk-mono", display: "swap" });
 
 export const metadata: Metadata = {
   title: { default: "Orbit", template: "%s · Orbit" },
