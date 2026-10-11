@@ -1,10 +1,12 @@
 "use client";
 
-import { Button, Field, Glyph, Input } from "@puckoops/camelot";
+import { Button, Field, Glyph, GoogleSignIn, Input } from "@puckoops/camelot";
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { useState, type FormEvent } from "react";
 import styles from "./auth.module.css";
+
+const GOOGLE_CLIENT_ID = process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID;
 
 // user-svc's sign-up rule, shared by every product's form.
 const PASSWORD_RULE = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{8,72}$/;
@@ -40,6 +42,21 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
     setPending(false);
     if (res?.ok) setResent(true);
     else setError("We couldn't send a new link. Try again in a moment.");
+  };
+
+  const signInWithGoogle = async (credential: string) => {
+    setPending(true);
+    setError(null);
+    setUnconfirmed(null);
+    const res = await post("/api/auth/google", { credential });
+    const body = await res?.json().catch(() => null);
+    if (!res?.ok) {
+      setPending(false);
+      setError(body?.message ?? "That didn't work. Try again.");
+      return;
+    }
+    router.push(next);
+    router.refresh();
   };
 
   const submit = async (e: FormEvent) => {
@@ -109,6 +126,12 @@ export function AuthForm({ mode }: { mode: "login" | "signup" }) {
       <p className={`small ${styles.lede}`}>
         {mode === "login" ? "Every client, every hour, every invoice." : "One tracker for clients, projects, work, money and files."}
       </p>
+      {GOOGLE_CLIENT_ID && (
+        <div className={styles.sso}>
+          <GoogleSignIn clientId={GOOGLE_CLIENT_ID} text={mode === "login" ? "signin" : "signup"} onCredential={signInWithGoogle} />
+          <p className={`small ${styles.or}`}>or with your email</p>
+        </div>
+      )}
       <form className={styles.form} onSubmit={submit} noValidate>
         {alert}
         {unconfirmed && (

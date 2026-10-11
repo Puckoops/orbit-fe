@@ -14,6 +14,10 @@
 .title { font-family: var(--font-display); font-size: 36px; line-height: 40px; letter-spacing: -0.02em; }
 .lede { margin-top: var(--space-2); color: var(--text-3); }
 .form { display: flex; flex-direction: column; gap: var(--space-4); margin-top: var(--space-8); }
+.sso { display: flex; flex-direction: column; gap: var(--space-5); margin-top: var(--space-8); }
+.sso + .form { margin-top: var(--space-5); }
+.or { display: flex; align-items: center; gap: var(--space-3); color: var(--text-4); }
+.or::before, .or::after { content: ""; flex: 1; border-top: var(--border-w) solid var(--hairline); }
 .submit { width: 100%; margin-top: var(--space-2); }
 .alt { margin-top: var(--space-6); text-align: center; color: var(--text-3); }
 .alt a { color: var(--text-1); text-decoration: underline; text-decoration-color: var(--hairline-strong); text-underline-offset: 3px; }
