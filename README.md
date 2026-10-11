@@ -6,8 +6,8 @@ The web app for **Orbit**, a work console for services agencies, at https://orbi
 
 The browser only ever calls this app. Route handlers on the server talk to the two APIs, and the session token stays in an httpOnly cookie:
 
-- **Accounts** come from [user-svc](https://github.com/LooneY2K/user-svc), which every Puckoops product shares. `/api/auth/*` signs people up and in with `"type": "orbit"`, which adds Orbit to their account. Sign-up ends at the inbox: the account can sign in once its address is confirmed through the emailed link, which lands on `/verify`.
-- **Everything else** comes from [orbit-be](https://github.com/LooneY2K/orbit-be): `/api/orbit/*` forwards each request with the session as a bearer token.
+- **Accounts** come from [user-svc](https://github.com/Puckoops/user-svc), which every Puckoops product shares. `/api/auth/*` signs people up and in with `"type": "orbit"`, which adds Orbit to their account. Sign-up ends at the inbox: the account can sign in once its address is confirmed through the emailed link, which lands on `/verify`.
+- **Everything else** comes from [orbit-be](https://github.com/Puckoops/orbit-be): `/api/orbit/*` forwards each request with the session as a bearer token.
 
 ## Running it
 
@@ -28,7 +28,7 @@ Both are read on the server at request time; neither reaches the browser.
 
 ## Camelot
 
-`@puckoops/camelot` is installed from `vendor/puckoops-camelot-0.1.0.tgz`, a packed build of the [Camelot](https://github.com/LooneY2K/camelot) package. To take a newer Camelot, pack it there, replace the tarball here and run `npm install`.
+`@puckoops/camelot` is installed from `vendor/puckoops-camelot-0.1.0.tgz`, a packed build of the [Camelot](https://github.com/Puckoops/camelot) package. To take a newer Camelot, pack it there, replace the tarball here and run `npm install`.
 
 ## Deployment
 
